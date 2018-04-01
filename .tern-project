@@ -1,0 +1,15 @@
+{
+  "libs": [
+    "browser",
+  ],
+  "loadEagerly": [
+
+  ],
+  "plugins": {
+    "requirejs": {
+      "baseURL": "./node_modules/requirejs",
+      "paths": {}
+    },
+    "node": {}
+  }
+}

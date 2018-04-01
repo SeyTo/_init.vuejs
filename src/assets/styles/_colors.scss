@@ -1,0 +1,94 @@
+// colors
+
+$blu: (
+  "base": #00a8db,
+  "l5":  #e7f7fb,
+  "l4":  #b9e7f5,
+  "l3":  #8bd7ee,
+  "l2":  #5cc7e8,
+  "l1":  #2eb7e1,
+  "d1":   #008ab4,
+  "d2":   #006b8c,
+  "d3":   #004d64,
+  "d4":   #002e3c
+);
+
+$ora: (
+  "base":          #ffc145,
+  "l5":  #fff9ee,
+  "l4":  #ffeecc,
+  "l3":  #ffe2aa,
+  "l2":  #ffd788,
+  "l1":  #ffcc66,
+  "d1":   #d19e39,
+  "d2":   #a37b2c,
+  "d3":   #745820,
+  "d4":   #463513
+);
+
+$yel: (
+  "base":       #faff81,
+  "l5":  #fefff3,
+  "l4":  #fdffdc,
+  "l3":  #fcffc5,
+  "l2":  #fbffae,
+  "l1":  #faff97,
+  "d1":   #cdd16a,
+  "d2":   #a0a353,
+  "d3":   #72743b,
+  "d4":   #454624
+);
+
+$red: (
+  "base":       #ff6b6c,
+  "l5":  #fff1f1,
+  "l4":  #ffd6d6,
+  "l3":  #ffbbbc,
+  "l2":  #ffa0a1,
+  "l1":  #ff8586,
+  "d1":   #d15859,
+  "d2":   #a34545,
+  "d3":   #743132,
+  "d4":   #461e1e
+);
+
+$sha: (
+  "base":       #fffff5,
+  "d1":   #d1d1c9,
+  "d2":   #a3a39c,
+  "d3":   #747470,
+  "d4":   #464643,
+  "hell":    #181817
+);
+
+$colors: (
+  "blue":  $blu,
+  "man": $sha,
+  "orange": $ora,
+  "yellow": $yel,
+  "red": $red
+);
+
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+      .#{$color_name} {
+        background-color: $color_value !important;
+      }
+      .#{$color_name}-text {
+        color: $color_value !important;
+      }
+    }
+    @else if $color_name != "shade" {
+      .#{$color_name}.#{$color_type} {
+        background-color: $color_value !important;
+      }
+      .#{$color_name}-text.text-#{$color_type} {
+        color: $color_value !important;
+      }
+    }
+  }
+}
+
+// usage: color("name_of_color", "type_of_color")
+// to avoid to repeating map-get($colors, ...)
