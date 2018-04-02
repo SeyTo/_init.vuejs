@@ -5,7 +5,7 @@ import store from "./store";
 import "./registerServiceWorker";
 
 // this would be better to load from another js file
-import "@/assets/styles/main.module.scss";
+// import "@/assets/styles/main.module.scss";
 
 Vue.config.productionTip = false;
 

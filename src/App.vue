@@ -5,6 +5,10 @@
 </template>
 
 <style lang="scss">
+// import like this
+@import "~scss/main.scss";
+@import "~scss/main.module.scss";
+
 </style>
 
 <script>
@@ -16,6 +20,6 @@ export default {
   },
   mounted() {
   }
-}
+};
 </script>
 
